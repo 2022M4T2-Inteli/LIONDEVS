@@ -26,14 +26,16 @@ const NavigationBar = () => {
     { name: "Tabela", link: "/tabela"  },
     { name: "Relatórios", link: "/relatorios" },
     { name: "Registro de Dispositivo", link: "/registro" },
-    { name: "Localização", link: "/localizacao" }
+    { name: "Localização", link: "/localizacao" },
+    { name: "Manual", link: "https://www.canva.com/design/DAFSIjEMmEo/j3-27AW7dS6rZgzmiTdtzA/view?utm_content=DAFSIjEMmEo&utm_campaign=designshare&utm_medium=link&utm_source=homepage_design_menu" }
   ];
   const pagesMin = [
     { name: "Home", link: "/Home" },
     { name: "Patrimônio", link: "/patrimonio" },
     { name: "Relatórios", link: "/relatorios" },
     { name: "Registro de Dispositivo", link: "/registro" },
-    { name: "Localização", link: "/location" }
+    { name: "Localização", link: "/location" },
+    { name: "Manual", link: "https://www.canva.com/design/DAFSIjEMmEo/j3-27AW7dS6rZgzmiTdtzA/view?utm_content=DAFSIjEMmEo&utm_campaign=designshare&utm_medium=link&utm_source=homepage_design_menu" }
   ];
   
   const handleOpenNavMenu = (event) => {
