@@ -1,4 +1,4 @@
-// Importação das blibliotecas
+// Inpotação das blibliotecas
 #include "Secrets.h"
 #include <WiFiClientSecure.h>
 #include <PubSubClient.h>
@@ -9,8 +9,8 @@
 #include <Wire.h>
 
 // Define os parametros de publicação dos dados para a aws
-#define AWS_IOT_PUBLISH_TOPIC   "esp32/pub"
-#define AWS_IOT_SUBSCRIBE_TOPIC "esp32/sub"
+#define AWS_IOT_PUBLISH_TOPIC   "2esp32/pub"
+#define AWS_IOT_SUBSCRIBE_TOPIC "2esp32/sub"
 
 // Define as portas dos sensores e leds 
 #define RFID_SS_SDA   21
@@ -230,19 +230,26 @@ void loop()
   //se o cartão foi lido
   if(leitor->cartaoFoiLido()){
     //printa o tipo do cartão
+        client.loop();
     Serial.println(leitor->tipoCartao());
     // printa o id do cartão
+        client.loop();
     Serial.println(leitor->cartaoLido());
+        client.loop();
     h=leitor->cartaoLido();
+        client.loop();
     publishMessage();
+        client.loop();
     
     leitor->resetarLeitura();
     //acende o led
+        client.loop();
     digitalWrite(LED,HIGH);
-    delay(2000);
+    delay(500);
     //apaga o led
+        client.loop();
     digitalWrite(LED,LOW);
-    delay(1000);
   }
-  client.loop();
+    client.loop();
 }
+
