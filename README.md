@@ -55,7 +55,7 @@ PlaceHolder
 * 2.0 - (05/11/2022)
 	*Adição de um wireframe, da futura interface web do projeto, segunda versão da arquitetura da solução e testes do prototipo inicial
 * 3.0 - *Adição da 3 versão da arquitetura da solução, 2 versão do casos de teste, interações de úsuario. Criação do manual do úsuario. Atualização do codigo fonte e criação do frontend e backend 18/11/2022
-* 4.0 - Previsto para 02/12/2022
+* 4.0 - *Atualização com novas entradas e saídas por bloco,interações, novos testes do sistema e refinamento das user stories. E adição da pesquisa de custo, com retorno do investimento, benefícios e utilidades da solução e recomendações para descarte dos componentes.
 * 5.0 - Previsto para 15/12/2022
 
 ## 📋 Licença/License
@@ -78,6 +78,7 @@ interna_opiniao,1392010/a-evolucao-da-educacao-bilingue-pos-pandemia.shtml. Aces
 17/10/2022.
 
 AWS. Computação em nuvem com a AWS. Disponível em: https://aws.amazon.com/pt/ what-is-aws/?nc2=h_ql_le_int. Acesso em: 09/11/2022.
+
 SANTOS, R. Getting Started with ESP-NOW (ESP32 with Arduino IDE). Disponível em: https://randomnerdtutorials.com/esp-now-esp32-arduino-ide/. Acesso em: 10/11/2022.
 
 UPESY. Create a WiFi access point with an ESP32. Disponível em: https://www.upesy. com/blogs/tutorials/how-create-a-wifi-acces-point-with-esp32. Acesso em: 10/11/2022 
