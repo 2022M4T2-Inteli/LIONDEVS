@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import NavigationBar from '../services/navbar';
 // import axios from "axios"
 
 function Tabela() {
@@ -9,7 +10,10 @@ function Tabela() {
   // Número total de passageiros
   const [totalPassengers, setTotalPassengers] = useState(1)
   return (
+    <>
+    <NavigationBar></NavigationBar>
     <p>Hello</p>
+    </>
   );
 }
 export default Tabela;
