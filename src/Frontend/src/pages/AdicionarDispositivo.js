@@ -1,5 +1,5 @@
 import { Button, Typography } from "@mui/material";
-import NavigationBar from "../services/navbar";
+import NavigationBar from "../components/navbar";
 import TextField from "@mui/material/TextField";
 import FormControl from '@mui/material/FormControl';
 import MenuItem from '@mui/material/MenuItem';

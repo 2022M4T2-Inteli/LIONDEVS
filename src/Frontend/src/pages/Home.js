@@ -1,4 +1,4 @@
-import NavigationBar from "../services/navbar";
+import NavigationBar from "../components/navbar";
 import Button from '@mui/material/Button';
 import { Typography } from "@mui/material";
 import { fetchData } from '../services/AwsFunction';

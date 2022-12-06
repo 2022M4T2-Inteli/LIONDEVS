@@ -1,5 +1,5 @@
 import React from "react";
-import NavigationBar from "../services/navbar";
+import NavigationBar from "../components/navbar";
 import TextField from '@mui/material/TextField';
 import { Typography } from "@mui/material";
 import Button from "@mui/material/Button";

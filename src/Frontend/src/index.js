@@ -8,7 +8,7 @@ import SelectRastreio from './pages/SelecaoRastreio'
 import Graphicss from './pages/Graphics'
 import AdicionarDispositivo from './pages/AdicionarDispositivo';
 import Login from "./pages/Login";
-import Tabela from './pages/ReactTable';
+import Tabela from './components/ReactTable';
 import Relatorios from './pages/Relatorios';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Localizacao from './pages/Localizacao';
@@ -16,6 +16,7 @@ import * as AWS from 'aws-sdk'
 import {
   ConfigurationOptions
 } from 'aws-sdk'
+import TabelaView from './components/ReactTable';
 
 
 const configuration = ConfigurationOptions = {
@@ -39,7 +40,7 @@ root.render(
           <Route index element={<Home />} />
           <Route path="relatorios" element={<Relatorios />} />
           <Route path="registro" element={<AdicionarDispositivo />} />
-          <Route path="tabela" element={<Tabela />} />
+          <Route path="tabela" element={<TabelaView />} />
           <Route path="localizacao" element={<Localizacao />} />
       </Routes>
 </BrowserRouter>

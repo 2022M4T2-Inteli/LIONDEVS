@@ -1,4 +1,4 @@
-import NavigationBar from "../services/navbar";
+import NavigationBar from "../components/navbar";
 import * as React from 'react';
 import Box from '@mui/material/Box';
 import { Button, Typography } from "@mui/material";
