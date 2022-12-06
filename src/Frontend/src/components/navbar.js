@@ -27,7 +27,7 @@ const NavigationBar = () => {
     { name: "Relatórios", link: "/relatorios" },
     { name: "Registro de Dispositivo", link: "/registro" },
     { name: "Localização", link: "/localizacao" },
-    { name: "Manual", link: "https://www.canva.com/design/DAFSIjEMmEo/j3-27AW7dS6rZgzmiTdtzA/view?utm_content=DAFSIjEMmEo&utm_campaign=designshare&utm_medium=link&utm_source=homepage_design_menu" }
+    { name: "Manual", link: "https://drive.google.com/file/d/1KEhvga-eGrOgt0cYJCkqWg6ObQ0aCx_U/view?usp=sharing" }
   ];
   const pagesMin = [
     { name: "Home", link: "/Home" },
@@ -35,10 +35,11 @@ const NavigationBar = () => {
     { name: "Relatórios", link: "/relatorios" },
     { name: "Registro de Dispositivo", link: "/registro" },
     { name: "Localização", link: "/location" },
-    { name: "Manual", link: "https://www.canva.com/design/DAFSIjEMmEo/j3-27AW7dS6rZgzmiTdtzA/view?utm_content=DAFSIjEMmEo&utm_campaign=designshare&utm_medium=link&utm_source=homepage_design_menu" }
+    { name: "Manual", link: "https://drive.google.com/file/d/1KEhvga-eGrOgt0cYJCkqWg6ObQ0aCx_U/view?usp=sharing" }
   ];
   
   const handleOpenNavMenu = (event) => {
+    
     setAnchorElNav(event.currentTarget);
   };
   const handleOpenUserMenu = (event) => {
