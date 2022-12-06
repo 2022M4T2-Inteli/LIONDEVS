@@ -1,6 +1,6 @@
-import './App.css';
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useMemo } from 'react';
 import axios from "axios"
+import TabelaView from '../components/ReactTable';
 function TabelaDados() {
   // Array com os passageiros falsos da API
   const [data, setData] = useState([])
@@ -61,9 +61,11 @@ function TabelaDados() {
     []
   );
   return (
+    <>
     <div className="App">
-        <Table columns={columns} data={data} />
+        <TabelaView columns={columns} data={data} />
     </div>
+    </>
   );
 }
 export default TabelaDados;

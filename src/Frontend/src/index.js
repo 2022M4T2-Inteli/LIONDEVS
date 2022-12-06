@@ -16,7 +16,7 @@ import * as AWS from 'aws-sdk'
 import {
   ConfigurationOptions
 } from 'aws-sdk'
-import TabelaView from './components/ReactTable';
+import TabelaDados from './pages/Table';
 
 
 const configuration = ConfigurationOptions = {
@@ -40,7 +40,7 @@ root.render(
           <Route index element={<Home />} />
           <Route path="relatorios" element={<Relatorios />} />
           <Route path="registro" element={<AdicionarDispositivo />} />
-          <Route path="tabela" element={<TabelaView />} />
+          <Route path="tabela" element={<TabelaDados />} />
           <Route path="localizacao" element={<Localizacao />} />
       </Routes>
 </BrowserRouter>
