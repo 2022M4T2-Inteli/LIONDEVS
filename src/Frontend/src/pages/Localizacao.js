@@ -1,5 +1,5 @@
 import { Typography } from '@mui/material';
-import React from 'react';
+import React, { useEffect } from 'react';
 import logo from '../images/mapa.png';
 import NavigationBar from '../components/navbar';
 import { TextField } from '@mui/material';
@@ -10,10 +10,21 @@ import InputLabel from '@mui/material/InputLabel';
 import MenuItem from '@mui/material/MenuItem';
 import Button from '@mui/material/Button';
 import Box from '@mui/material/Box';
+import axios from 'axios';
 
 // console.log(logo);
 
 function Localizacao() {
+
+async function getdevices() {
+    const response = await axios.get('http://Testeapi-env.eba-x4bgfctn.us-east-1.elasticbeanstalk.com/product/all');
+    console.log(response.data);
+  }
+
+  useEffect(() => {
+    getdevices();
+  }, []);
+
 
   return (
     <>
