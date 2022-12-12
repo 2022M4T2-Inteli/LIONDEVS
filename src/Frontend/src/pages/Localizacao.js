@@ -1,5 +1,5 @@
 import { Typography } from '@mui/material';
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import logo from '../images/mapa.png';
 import NavigationBar from '../components/navbar';
 import { TextField } from '@mui/material';
@@ -16,9 +16,14 @@ import axios from 'axios';
 function Localizacao() {
 
 async function getdevices() {
-    const response = await axios.get('http://Testeapi-env.eba-x4bgfctn.us-east-1.elasticbeanstalk.com/product/all');
-    console.log(response.data);
+    await axios.get('http://Testeapi-env.eba-x4bgfctn.us-east-1.elasticbeanstalk.com/product/all').then( async res => { 
+      console.log(res.data.products)
+      return setData(res.data.products) 
+    } );
   }
+  const [data, setData] = useState([]);
+  
+  
 
   useEffect(() => {
     getdevices();
@@ -27,6 +32,8 @@ async function getdevices() {
 
   return (
     <>
+    
+   
       <NavigationBar></NavigationBar>
       <br></br>
       <br></br>
@@ -53,7 +60,6 @@ async function getdevices() {
             labelId="demo-select-small"
             id="demo-select-small"
             label="Categoria" >
-
             <MenuItem value="">
               <em>None</em>
             </MenuItem>
@@ -64,6 +70,21 @@ async function getdevices() {
 
             </Select>
             </FormControl>
+      </div>
+      <div> 
+        {data.map((device, index) => (
+          <p key={index}>{device.tipo}</p>
+        ))}
+        {data.map((device, index) => (
+          <p key={index}>{device.id}</p>
+        ))}
+        {data.map((device, index) => (
+          <p key={index}>{device.localizacao}</p>
+        ))}
+        {data.map((device, index) => (
+          <p key={index}>{device.rfid}</p>
+        ))}
+        
       </div>
       <Box sx={{ width:'430px', height: '180px', mt:'3rem', ml:'25rem', backgroundColor: '#DCDCDC', borderRadius:'25px'}}>
       <div>
@@ -81,3 +102,4 @@ async function getdevices() {
 }
 
 export default Localizacao;
+
