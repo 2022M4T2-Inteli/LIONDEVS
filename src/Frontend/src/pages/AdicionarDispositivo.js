@@ -46,9 +46,9 @@ function AdicionarDispositivo() {
             </Typography>
             <TextField  size="small" label="Tag" variant="outlined" sx={{width:'514px', height:'55px', ml:'450px', mt:'-35px'}} />
 
-            <Button sx={{width:'188px', height:'56.93px', mt:'7rem', ml:'16.063rem', backgroundColor:'#34C471', color:'#FFFFFF', borderRadius:'36px', display:'inline'}}>Adicionar</Button>
-            <Button sx={{width:'188px', height:'56.93px', mt:'-5rem', ml:'5.5rem', backgroundColor:'#0082AF', color:'#FFFFFF', borderRadius:'36px', display:'inline'}}>Alterar Tag</Button>
-            <Button sx={{width:'188px', height:'56.93px', mt:'-5rem', ml:'5.5rem', backgroundColor:'#E64747', color:'#FFFFFF', borderRadius:'36px', display:'inline'}}>Remover</Button>
+            <Button sx={{width:'188px', height:'56.93px', mt:'7rem', ml:'-42.5rem', backgroundColor:'#34C471', color:'#FFFFFF', borderRadius:'36px', display:'inline'}}>Adicionar</Button>
+            <Button sx={{width:'188px', height:'56.93px', mt:'7rem', ml:'1.5rem', backgroundColor:'#0082AF', color:'#FFFFFF', borderRadius:'36px', display:'inline'}}>Alterar Tag</Button>
+            <Button sx={{width:'188px', height:'56.93px', mt:'7rem', ml:'1.5rem', backgroundColor:'#E64747', color:'#FFFFFF', borderRadius:'36px', display:'inline'}}>Remover</Button>
         </>
     );
   }
