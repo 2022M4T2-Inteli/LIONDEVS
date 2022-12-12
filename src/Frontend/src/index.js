@@ -2,31 +2,12 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
 import reportWebVitals from './reportWebVitals';
-import MainRastreio from './pages/PrincipalRastreio';
 import Home from './pages/Home'
-import SelectRastreio from './pages/SelecaoRastreio'
-import Graphicss from './pages/Graphics'
 import AdicionarDispositivo from './pages/AdicionarDispositivo';
-import Login from "./pages/Login";
-import Tabela from './components/ReactTable';
 import Relatorios from './pages/Relatorios';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Localizacao from './pages/Localizacao';
-import * as AWS from 'aws-sdk'
-import {
-  ConfigurationOptions
-} from 'aws-sdk'
 import TabelaDados from './pages/Table';
-
-
-const configuration = ConfigurationOptions = {
-  region: 'us-east-1'
-}
-
-
-
-
-AWS.config.update(configuration)
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 

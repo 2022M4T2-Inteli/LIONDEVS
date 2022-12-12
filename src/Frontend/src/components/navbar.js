@@ -10,16 +10,9 @@ import Container from '@mui/material/Container';
 import MenuItem from '@mui/material/MenuItem';
 import Button from '@mui/material/Button';
 import logo from '../images/image_5.png';
-// import { Link } from 'react-router-dom'
-  
-  
-
-
-const settings = ['Home', 'Patrimônio', 'Relatórios', 'Registro de Dispositivo'];
 
 const NavigationBar = () => {
   const [anchorElNav, setAnchorElNav] = React.useState(null);
-  const [anchorElUser, setAnchorElUser] = React.useState(null);
   
   const pagesMax = [
     { name: "Home", link: "/Home" },
@@ -42,16 +35,9 @@ const NavigationBar = () => {
     
     setAnchorElNav(event.currentTarget);
   };
-  const handleOpenUserMenu = (event) => {
-    setAnchorElUser(event.currentTarget);
-  };
 
   const handleCloseNavMenu = () => {
     setAnchorElNav(null);
-  };
-
-  const handleCloseUserMenu = () => {
-    setAnchorElUser(null);
   };
 
   return (
