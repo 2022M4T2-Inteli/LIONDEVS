@@ -16,8 +16,8 @@ function AdicionarDispositivo() {
     const onSubmit = async (e) => {
       e.preventDefault()
       const post = { 
-        userName: user,
-        Id: id
+        id: user,
+        localizacao: id
      }
       try {
         const res = await axios.post('http://Testeapi-env.eba-x4bgfctn.us-east-1.elasticbeanstalk.com/product/', post);
@@ -56,6 +56,7 @@ function AdicionarDispositivo() {
             </FormControl>
 
             <form onSubmit={onSubmit}>
+              
                 <Typography sx={{height:'2.4rem', width:'19.94rem', mt:'3.688rem', ml:'12rem', fontFamily: 'Inter', fontSize: '1.5rem', fontWeight: '400', lineHeight: '2.25rem', letterSpacing: '0em', align: 'left'}}>
                     ID do dispositivo:
                 </Typography>
@@ -68,17 +69,14 @@ function AdicionarDispositivo() {
                 <Typography sx={{height:'1.75rem', width:'19.94rem', mt:'3.125rem', ml:'12rem', fontFamily: 'Inter', fontSize: '1.5rem', fontWeight: '400', lineHeight: '2.25rem', letterSpacing: '0em', align: 'left'}}>
                     Tag do dispositivo:
                 </Typography>
-                <TextField  size="small" label="Tag" variant="outlined" sx={{width:'514px', height:'55px', ml:'450px', mt:'-35px'}} />
+                <TextField  onChange={(event) => {
+                        createId(event.target.value)
+                    }}
+                    value={id} 
+                    size="small" label="Tag" variant="outlined" sx={{width:'514px', height:'55px', ml:'450px', mt:'-35px'}} />
 
                 <Button type="submit" sx={{width:'188px', height:'56.93px', mt:'7rem', ml:'16.063rem', backgroundColor:'#34C471', color:'#FFFFFF', borderRadius:'36px', display:'inline'}}>Adicionar</Button>
                 
-                <div className="mb-2 mt-3">
-                    <input
-                    type="text"
-                    placeholder="Name"
-                    className="form-control"
-                    />
-                </div>
             </form>
             
             
