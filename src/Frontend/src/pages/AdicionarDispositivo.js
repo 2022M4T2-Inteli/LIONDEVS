@@ -4,7 +4,7 @@ import TextField from "@mui/material/TextField";
 import FormControl from '@mui/material/FormControl';
 import MenuItem from '@mui/material/MenuItem';
 import InputLabel from '@mui/material/InputLabel';
-import Select, { SelectChangeEvent } from '@mui/material/Select';
+import Select from '@mui/material/Select';
 
 function AdicionarDispositivo() {
     return (
