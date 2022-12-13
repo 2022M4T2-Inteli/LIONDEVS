@@ -29,8 +29,9 @@ function AdicionarDispositivo() {
       }
     }
   
-    const handleRemove = (e) => {
-      const idDelete = this.state.id;
+    const handleRemove = async (e) => {
+      e.preventDefault()
+      const idDelete = {id};
       const url = `http://Testeapi-env.eba-x4bgfctn.us-east-1.elasticbeanstalk.com/product/`;
       e.preventDefault();
       axios.delete(url + idDelete)
