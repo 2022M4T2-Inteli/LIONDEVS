@@ -12,12 +12,14 @@ function AdicionarDispositivo() {
 
     const [user, createUser] = useState('')
     const [id, createId] = useState('')
+    const [tipo, createTipo] = useState('')
 
     const onSubmit = async (e) => {
       e.preventDefault()
       const post = { 
-        id: user,
-        localizacao: id
+        User: user,
+        id: id,
+        Tipo: tipo
      }
       try {
         const res = await axios.post('http://Testeapi-env.eba-x4bgfctn.us-east-1.elasticbeanstalk.com/product/', post);
@@ -26,6 +28,21 @@ function AdicionarDispositivo() {
         alert(e)
       }
     }
+  
+    const handleRemove = (e) => {
+      const idDelete = this.state.id;
+      const url = `http://Testeapi-env.eba-x4bgfctn.us-east-1.elasticbeanstalk.com/product/`;
+      e.preventDefault();
+      axios.delete(url + idDelete)
+          .then(res => {
+              console.log(res.data);
+          })
+          .catch((err) => {
+              console.log(err);
+          })
+  }
+
+
     return (
         <>
         <NavigationBar></NavigationBar>
@@ -37,25 +54,35 @@ function AdicionarDispositivo() {
                 Tipo do dispositivo:
             </Typography>
 
-            <FormControl sx={{ minWidth: 515 , ml: '450px', mt: '-30px'}} size="small">
-            <InputLabel id="demo-select-small">Tipo</InputLabel>
-            <Select 
-            labelId="demo-select-small"
-            id="demo-select-small"
-            label="Categoria" >
-
-            <MenuItem value="">
-              <em>None</em>
-            </MenuItem>
-            <MenuItem value={10}>Notebook</MenuItem>
-            <MenuItem value={20}>Tablet</MenuItem>
-            <MenuItem value={30}>Cadeiras</MenuItem>
-            <MenuItem value={40}>Mesas</MenuItem>
-
-            </Select>
-            </FormControl>
 
             <form onSubmit={onSubmit}>
+                
+                <FormControl sx={{ minWidth: 515 , ml: '450px', mt: '-30px'}} size="small">
+                <InputLabel 
+                    id="demo-select-small">
+                  Tipo
+                </InputLabel>
+                  <Select 
+                   onChange={(event) => {
+                    createTipo(event.target.value)
+                    }}
+                    value={tipo} 
+
+                  labelId="demo-select-small"
+                  id="demo-select-small"
+                  label="Categoria" >
+
+                    <MenuItem value="None">
+                      <em>None</em>
+                    </MenuItem>
+                    <MenuItem value="Notebook">Notebook</MenuItem>
+                    <MenuItem value="Tablet">Tablet</MenuItem>
+                    <MenuItem value="Cadeiras">Cadeiras</MenuItem>
+                    <MenuItem value="Mesas">Mesas</MenuItem>
+
+                  </Select>
+                </FormControl>
+
               
                 <Typography sx={{height:'2.4rem', width:'19.94rem', mt:'3.688rem', ml:'12rem', fontFamily: 'Inter', fontSize: '1.5rem', fontWeight: '400', lineHeight: '2.25rem', letterSpacing: '0em', align: 'left'}}>
                     ID do dispositivo:
@@ -79,9 +106,8 @@ function AdicionarDispositivo() {
                 
             </form>
             
-            
             <Button sx={{width:'188px', height:'56.93px', mt:'-5rem', ml:'5.5rem', backgroundColor:'#0082AF', color:'#FFFFFF', borderRadius:'36px', display:'inline'}}>Alterar Tag</Button>
-            <Button sx={{width:'188px', height:'56.93px', mt:'-5rem', ml:'5.5rem', backgroundColor:'#E64747', color:'#FFFFFF', borderRadius:'36px', display:'inline'}}>Remover</Button>
+            <Button sx={{width:'188px', height:'56.93px', mt:'-5rem', ml:'5.5rem', backgroundColor:'#E64747', color:'#FFFFFF', borderRadius:'36px', display:'inline'}}  onClick={handleRemove}>Remover</Button>
 
             
         </>
