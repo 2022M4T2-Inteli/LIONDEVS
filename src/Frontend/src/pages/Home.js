@@ -2,6 +2,9 @@ import NavigationBar from "../components/navbar";
 import Button from '@mui/material/Button';
 import { Typography } from "@mui/material";
 import Graphicss from "./Graphics";
+import * as React from 'react';
+import DataTable from "../components/Table_Home";
+
 
 function Home() {
         return (
@@ -25,10 +28,16 @@ function Home() {
                         </Typography>
                     </Button>
             </div>
-            </>
-        );
-    }
-    
-//   }
+            <br>
+            </br>
+            <br>
+            </br>
+            <DataTable/>
+
+             </>
+                );
+            
+            }
+        //   }
   
 export default Home;
