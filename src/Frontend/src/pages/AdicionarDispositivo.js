@@ -17,8 +17,8 @@ function AdicionarDispositivo() {
     const onSubmit = async (e) => {
       e.preventDefault()
       const post = { 
-        User: user,
-        id: id,
+        rfid: id,
+        id: user,
         Tipo: tipo
      }
       try {
