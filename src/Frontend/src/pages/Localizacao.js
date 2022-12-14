@@ -10,23 +10,21 @@ import MenuItem from '@mui/material/MenuItem';
 import Button from '@mui/material/Button';
 import Box from '@mui/material/Box';
 import axios from 'axios';
-
-// console.log(logo);
+import DataTable from "../components/Table_Home";
 
 function Localizacao() {
 
-async function getdevices() {
+async function getDevices() {
     await axios.get('http://Testeapi-env.eba-x4bgfctn.us-east-1.elasticbeanstalk.com/product/all').then( async res => { 
       console.log(res.data.products)
       return setData(res.data.products) 
     } );
   }
+
   const [data, setData] = useState([]);
   
-  
-
   useEffect(() => {
-    getdevices();
+    getDevices();
   }, []);
 
 
