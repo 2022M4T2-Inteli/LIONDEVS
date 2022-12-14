@@ -18,9 +18,22 @@ const [id, createId] = useState('')
 
 async function getDevices() {
     await axios.get('http://Testeapi-env.eba-x4bgfctn.us-east-1.elasticbeanstalk.com/product/all').then( async res => { 
-      return setData(res.data.products) 
+      setData(res.data.products);
+      console.log(res.data.products);
     } );
   }
+const filterId = (e) => {
+    let filteredId = data.filter((collaborator) => {
+        return collaborator.id
+            .toLowerCase()
+            .includes(e.target.value.toLowerCase());
+    });
+
+    setFiltrado(filteredId);
+    console.log(filteredId);
+};
+const [filtrado, setFiltrado] = useState([]);
+
 
   const [data, setData] = useState([]);
   
@@ -45,7 +58,7 @@ async function getDevices() {
           <Typography sx={{ ml: '15rem', mt:'2rem', fontSize: '24px', height: '10px', width: 'fit-content' }}>Pesquisa por tipo</Typography>
         </div>
 
-        <TextField size="small" label="ID" variant="outlined" sx={{ width:'514px', height:'55px', ml:'450px', mt: '-80px'}} />
+        <TextField size="small" label="ID" variant="outlined" sx={{ width:'514px', height:'55px', ml:'450px', mt: '-80px'}} onChange={(e) => filterId(e)} />
 
           <FormControl sx={{ minWidth: 515 , ml: '450px', mt: '-30px'}} size="small">
             <InputLabel id="demo-select-small">Tipo</InputLabel>
@@ -69,18 +82,21 @@ async function getDevices() {
         <br />
       <div> 
         <DataTable/>
-        {data.map((device, index) => (
+
+        
+        {filtrado && filtrado.length ? filtrado.map((device, index) => (
+          <>
           <p key={index}>{device.tipo}</p>
-        ))}
-        {data.map((device, index) => (
           <p key={index}>{device.id}</p>
-        ))}
-        {data.map((device, index) => (
           <p key={index}>{device.localizacao}</p>
-        ))}
-        {data.map((device, index) => (
           <p key={index}>{device.rfid}</p>
-        ))}
+          </>
+        )) : data.map((device, index) => ( <>
+          <p key={index+'1'}>{device.tipo}</p>
+          <p key={index+'1'}>{device.id}</p>
+          <p key={index+'1'}>{device.localizacao}</p>
+          <p key={index+'1'}>{device.rfid}</p>
+          </>))} 
       </div>
 
       <Box sx={{ width:'430px', height: '180px', mt:'3rem', ml:'25rem', backgroundColor: '#DCDCDC', borderRadius:'25px'}}>
