@@ -1,21 +1,39 @@
 import { Typography } from '@mui/material';
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import logo from '../images/mapa.png';
-import NavigationBar from '../services/navbar';
+import NavigationBar from '../components/navbar';
 import { TextField } from '@mui/material';
-import { display } from '@mui/system';
 import FormControl from '@mui/material/FormControl';
-import Select, { SelectChangeEvent } from '@mui/material/Select';
+import Select from '@mui/material/Select';
 import InputLabel from '@mui/material/InputLabel';
 import MenuItem from '@mui/material/MenuItem';
 import Button from '@mui/material/Button';
+import Box from '@mui/material/Box';
+import axios from 'axios';
 
 // console.log(logo);
 
 function Localizacao() {
 
+async function getdevices() {
+    await axios.get('http://Testeapi-env.eba-x4bgfctn.us-east-1.elasticbeanstalk.com/product/all').then( async res => { 
+      console.log(res.data.products)
+      return setData(res.data.products) 
+    } );
+  }
+  const [data, setData] = useState([]);
+  
+  
+
+  useEffect(() => {
+    getdevices();
+  }, []);
+
+
   return (
     <>
+    
+   
       <NavigationBar></NavigationBar>
       <br></br>
       <br></br>
@@ -42,7 +60,6 @@ function Localizacao() {
             labelId="demo-select-small"
             id="demo-select-small"
             label="Categoria" >
-
             <MenuItem value="">
               <em>None</em>
             </MenuItem>
@@ -54,17 +71,35 @@ function Localizacao() {
             </Select>
             </FormControl>
       </div>
+      <div> 
+        {data.map((device, index) => (
+          <p key={index}>{device.tipo}</p>
+        ))}
+        {data.map((device, index) => (
+          <p key={index}>{device.id}</p>
+        ))}
+        {data.map((device, index) => (
+          <p key={index}>{device.localizacao}</p>
+        ))}
+        {data.map((device, index) => (
+          <p key={index}>{device.rfid}</p>
+        ))}
+        
+      </div>
+      <Box sx={{ width:'430px', height: '180px', mt:'3rem', ml:'25rem', backgroundColor: '#DCDCDC', borderRadius:'25px'}}>
       <div>
-      <Button sx={{width:'188px', height:'56.93px', mt:'1rem', ml:'18rem', backgroundColor:'#34C471', color:'#FFFFFF', borderRadius:'36px', display:'inline'}}>Adicionar</Button>
-      <Button sx={{width:'188px', height:'56.93px', mt:'1rem', ml:'16rem', backgroundColor:'#34C471', color:'#FFFFFF', borderRadius:'36px', display:'inline'}}>Revelar tudo</Button>
+      <Button sx={{width:'188px', height:'56.93px', mt:'1rem', ml:'1rem', backgroundColor:'#34C471', color:'#FFFFFF', borderRadius:'36px', display:'inline'}}>Adicionar</Button>
+      <Button sx={{width:'188px', height:'56.93px', mt:'1rem', ml:'1rem', backgroundColor:'#34C471', color:'#FFFFFF', borderRadius:'36px', display:'inline'}}>Revelar tudo</Button>
       </div>
       <div>
-      <Button sx={{width:'188px', height:'56.93px', mt:'2rem', ml:'18rem', backgroundColor:'#E64747', color:'#FFFFFF', borderRadius:'36px', display:'inline'}}>Remover</Button>
-      <Button sx={{width:'188px', height:'56.93px', mt:'2rem', ml:'16rem', backgroundColor:'#E64747', color:'#FFFFFF', borderRadius:'36px', display:'inline'}}>Remover tudo</Button>
+      <Button sx={{width:'188px', height:'56.93px', mt:'2rem', ml:'1rem', backgroundColor:'#E64747', color:'#FFFFFF', borderRadius:'36px', display:'inline'}}>Remover</Button>
+      <Button sx={{width:'188px', height:'56.93px', mt:'2rem', ml:'1rem', backgroundColor:'#E64747', color:'#FFFFFF', borderRadius:'36px', display:'inline'}}>Remover tudo</Button>
       </div>
+      </Box>
       <img src={logo} alt="Logo" width="1200" height="700"/>
     </>
   );
 }
 
 export default Localizacao;
+

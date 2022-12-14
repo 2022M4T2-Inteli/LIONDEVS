@@ -1,4 +1,4 @@
-import NavigationBar from "../services/navbar";
+import NavigationBar from "../components/navbar";
 import Box from '@mui/material/Box';
 import { Typography } from "@mui/material";
 import Button from "@mui/material/Button";

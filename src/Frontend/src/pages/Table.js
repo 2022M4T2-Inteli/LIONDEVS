@@ -1,0 +1,71 @@
+import { useEffect, useState, useMemo } from 'react';
+import axios from "axios"
+import TabelaView from '../components/ReactTable';
+function TabelaDados() {
+  // Array com os passageiros falsos da API
+  const [data, setData] = useState([])
+  // Número total de páginas
+  const [totalPages, setTotalPages] = useState(1)
+  // Número total de passageiros
+  const [totalPassengers, setTotalPassengers] = useState(1)
+  // Hook para fazer a primeira chamada do componente
+  useEffect(() => {
+    // Função para recuperar informações da API
+    axios.get("https://api.instantwebtools.net/v1/passenger?page=0&size=10")
+      .then((res) => {
+        // Pega e define os valores nas respectivas variáveis
+        const { data, totalPages, totalPassengers } = res.data
+        setData(data)
+        setTotalPages(totalPages)
+        setTotalPassengers(totalPassengers)
+      })
+  }, [])
+
+  const columns = useMemo(
+    () => [
+      {
+        // Primeiro grupo - Informações do passageiro
+        Header: "Informações do passageiro",
+        // Colunas do primeiro grupo
+        columns: [
+          {
+            Header: "Nome",
+            accessor: "name"
+          },
+          {
+            Header: "Viagens",
+            accessor: "trips"
+          }
+        ]
+      },
+      {
+        // Segundo grupo - Detalhes do vôo
+        Header: "Detalhes do vôo",
+        // Colunas do segundo grupo
+        columns: [
+          {
+            Header: "Nome",
+            accessor: "airline[0].name"
+          },
+          {
+            Header: "País",
+            accessor: "airline[0].country"
+          },
+          {
+            Header: "Slogan",
+            accessor: "airline[0].slogan"
+          }
+        ]
+      }
+    ],
+    []
+  );
+  return (
+    <>
+    <div className="App">
+        <TabelaView columns={columns} data={data} />
+    </div>
+    </>
+  );
+}
+export default TabelaDados;

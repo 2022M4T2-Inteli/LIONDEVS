@@ -1,5 +1,5 @@
 import { Box, TextField, Typography } from "@mui/material";
-import NavigationBar from "../services/navbar";
+import NavigationBar from "../components/navbar";
 import Button from "@mui/material/Button";
 
 function MainRastreio() {
