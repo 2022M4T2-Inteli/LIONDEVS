@@ -10,11 +10,9 @@ import MenuItem from '@mui/material/MenuItem';
 import Button from '@mui/material/Button';
 import Box from '@mui/material/Box';
 import axios from 'axios';
-import DataTable from "../components/Table_Home";
+import DataTable from '../components/Table_Home.js'
 
 function Localizacao() {
-
-const [id, createId] = useState('')
 
 async function getDevices() {
     await axios.get('http://Testeapi-env.eba-x4bgfctn.us-east-1.elasticbeanstalk.com/product/all').then( async res => { 
@@ -83,8 +81,8 @@ const [filtrado, setFiltrado] = useState([]);
       <div> 
         <DataTable/>
 
-        
-        {filtrado && filtrado.length ? filtrado.map((device, index) => (
+
+        {/* {filtrado && filtrado.length ? filtrado.map((device, index) => (
           <>
           <p key={index}>{device.tipo}</p>
           <p key={index}>{device.id}</p>
@@ -96,18 +94,12 @@ const [filtrado, setFiltrado] = useState([]);
           <p key={index+'1'}>{device.id}</p>
           <p key={index+'1'}>{device.localizacao}</p>
           <p key={index+'1'}>{device.rfid}</p>
-          </>))} 
+          </>))}  */}
       </div>
 
       <Box sx={{ width:'430px', height: '180px', mt:'3rem', ml:'25rem', backgroundColor: '#DCDCDC', borderRadius:'25px'}}>
         <div>
-        <Button sx={{width:'188px', height:'56.93px', mt:'1rem', ml:'1rem', backgroundColor:'#34C471', color:'#FFFFFF', borderRadius:'36px', display:'inline'}}>Adicionar</Button>
-        <Button sx={{width:'188px', height:'56.93px', mt:'1rem', ml:'1rem', backgroundColor:'#34C471', color:'#FFFFFF', borderRadius:'36px', display:'inline'}}>Revelar tudo</Button>
-        </div>
-
-        <div>
-        <Button sx={{width:'188px', height:'56.93px', mt:'2rem', ml:'1rem', backgroundColor:'#E64747', color:'#FFFFFF', borderRadius:'36px', display:'inline'}}>Remover</Button>
-        <Button sx={{width:'188px', height:'56.93px', mt:'2rem', ml:'1rem', backgroundColor:'#E64747', color:'#FFFFFF', borderRadius:'36px', display:'inline'}}>Remover tudo</Button>
+        <Button sx={{width:'188px', height:'56.93px', mt:'1rem', ml:'1rem', backgroundColor:'#34C471', color:'#FFFFFF', borderRadius:'36px', display:'inline'}}>Pesquisar</Button>
         </div>
       </Box>
 

@@ -16,7 +16,6 @@ const NavigationBar = () => {
   
   const pagesMax = [
     { name: "Home", link: "/Home" },
-    { name: "Tabela", link: "/tabela"  },
     { name: "Relatórios", link: "/relatorios" },
     { name: "Registro de Dispositivo", link: "/registro" },
     { name: "Localização", link: "/localizacao" },
@@ -24,7 +23,6 @@ const NavigationBar = () => {
   ];
   const pagesMin = [
     { name: "Home", link: "/Home" },
-    { name: "Patrimônio", link: "/patrimonio" },
     { name: "Relatórios", link: "/relatorios" },
     { name: "Registro de Dispositivo", link: "/registro" },
     { name: "Localização", link: "/location" },

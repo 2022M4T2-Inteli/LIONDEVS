@@ -1,47 +1,54 @@
 import * as React from 'react';
-import { DataGrid } from '@mui/x-data-grid';
+import Table from '@mui/material/Table';
+import TableBody from '@mui/material/TableBody';
+import TableCell from '@mui/material/TableCell';
+import TableContainer from '@mui/material/TableContainer';
+import TableHead from '@mui/material/TableHead';
+import TableRow from '@mui/material/TableRow';
+import Paper from '@mui/material/Paper';
 
-const columns = [
-  { field: 'id', headerName: 'ID', width: 70 },
-  { field: 'Localizacao', headerName: 'Localizacao', width: 130 },
-  { field: 'Dispositivo', headerName: 'Dispositivo', width: 130 },
-  {
-    field: 'age',
-    headerName: 'Age',
-    type: 'number',
-    width: 90,
-  },
-  {
-    field: 'ultima_atualizacao',
-    headerName: 'Tempo de Atualização (seg)',
-    description: 'This column has a value getter and is not sortable.',
-    sortable: false,
-    width: 200,
-  },
-];
+function createData(name, calories, fat, carbs, protein) {
+  return { name, calories, fat, carbs, protein };
+}
 
 const rows = [
-  { id: 1, Dispositivo: 'VL PC', Localizacao: 'Sala 01', ultima_atualizacao: 3 },
-  { id: 2, Dispositivo: 'Notebook', Localizacao: 'Sala 03', ultima_atualizacao: 42 },
-  { id: 3, Dispositivo: 'Notebook', Localizacao: 'Refeitorio', ultima_atualizacao: 45 },
-  { id: 4, Dispositivo: 'iPad', Localizacao: 'Sala 05', ultima_atualizacao: 16 },
-  { id: 5, Dispositivo: 'Chromebook', Localizacao: 'Auditorio', ultima_atualizacao: 28 },
-  { id: 6, Dispositivo: 'Chromebook', Localizacao: null, ultima_atualizacao: 150 },
-  { id: 7, Dispositivo: 'Chromebook', Localizacao: 'Sala 01', ultima_atualizacao: 44 },
-  { id: 8, Dispositivo: 'iPad', Localizacao: 'Sala 02', ultima_atualizacao: 36 },
-  { id: 9, Dispositivo: 'iPad', Localizacao: 'Sala 03', ultima_atualizacao: 65 },
+  createData('Frozen yoghurt', 159, 6.0, 24, 4.0),
+  createData('Ice cream sandwich', 237, 9.0, 37, 4.3),
+  createData('Eclair', 262, 16.0, 24, 6.0),
+  createData('Cupcake', 305, 3.7, 67, 4.3),
+  createData('Gingerbread', 356, 16.0, 49, 3.9),
 ];
 
-export default function DataTable() {
+export default function DenseTable() {
   return (
-    <div style={{ height: 400, width: '100%' }}>
-      <DataGrid
-        rows={rows}
-        columns={columns}
-        pageSize={5}
-        rowsPerPageOptions={[5]}
-        checkboxSelection
-      />
-    </div>
+    <TableContainer component={Paper}>
+      <Table sx={{ minWidth: 650 }} size="small" aria-label="a dense table">
+        <TableHead>
+          <TableRow>
+            <TableCell>Dessert (100g serving)</TableCell>
+            <TableCell align="right">Calories</TableCell>
+            <TableCell align="right">Fat&nbsp;(g)</TableCell>
+            <TableCell align="right">Carbs&nbsp;(g)</TableCell>
+            <TableCell align="right">Protein&nbsp;(g)</TableCell>
+          </TableRow>
+        </TableHead>
+        <TableBody>
+          {rows.map((row) => (
+            <TableRow
+              key={row.name}
+              sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
+            >
+              <TableCell component="th" scope="row">
+                {row.name}
+              </TableCell>
+              <TableCell align="right">{row.calories}</TableCell>
+              <TableCell align="right">{row.fat}</TableCell>
+              <TableCell align="right">{row.carbs}</TableCell>
+              <TableCell align="right">{row.protein}</TableCell>
+            </TableRow>
+          ))}
+        </TableBody>
+      </Table>
+    </TableContainer>
   );
 }

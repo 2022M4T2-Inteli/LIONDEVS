@@ -7,7 +7,6 @@ import AdicionarDispositivo from './pages/AdicionarDispositivo';
 import Relatorios from './pages/Relatorios';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Localizacao from './pages/Localizacao';
-import TabelaDados from './pages/Table';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 
@@ -15,15 +14,14 @@ root.render(
 <React.StrictMode> 
 
 <BrowserRouter>
-      <Routes>
-          <Route path="/" element={< Home/>} />
-          <Route path='/Home' element={<Home/>}/>
-          <Route index element={<Home />} />
-          <Route path="relatorios" element={<Relatorios />} />
-          <Route path="registro" element={<AdicionarDispositivo />} />
-          <Route path="tabela" element={<TabelaDados />} />
-          <Route path="localizacao" element={<Localizacao />} />
-      </Routes>
+    <Routes>
+      <Route path="/" element={< Home/>} />
+      <Route path='/Home' element={<Home/>}/>
+      <Route index element={<Home />} />
+      <Route path="relatorios" element={<Relatorios />} />
+      <Route path="registro" element={<AdicionarDispositivo />} />
+      <Route path="localizacao" element={<Localizacao />} />
+    </Routes>
 </BrowserRouter>
 
 </React.StrictMode>);
