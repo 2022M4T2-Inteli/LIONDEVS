@@ -47,18 +47,18 @@ function Localizacao() {
       <br></br>
 
       <div sx={{ display: 'inline' }}>
-        <Typography sx={{ ml: '10rem', fontSize: '24px', height: '10px', display: 'inline' }}>Pesquisa por ID</Typography>
+        <Typography sx={{ ml: '13rem', fontSize: '24px', height: '10px', display: 'inline' }}>Pesquisa por ID</Typography>
       </div>
 
       <div sx={{ display: 'flex', flexDirection: 'row', justifyContent: 'space-between' }}>
 
         <div sx={{ display: 'inline', height: '2px' }}>
-          <Typography sx={{ ml: '10rem', mt: '2rem', fontSize: '24px', height: '10px', width: 'fit-content' }}>Pesquisa por tipo</Typography>
+          <Typography sx={{ ml: '13rem', mt: '2rem', fontSize: '24px', height: '10px', width: 'fit-content' }}>Pesquisa por tipo</Typography>
         </div>
 
-        <TextField size="small" label="ID" variant="outlined" sx={{ width: '514px', height: '55px', ml: '380px', mt: '-80px' }} onChange={(e) => filterId(e)} />
+        <TextField size="small" label="ID" variant="outlined" sx={{ width: '514px', height: '55px', ml: '450px', mt: '-80px' }} onChange={(e) => filterId(e)} />
 
-        <FormControl sx={{ minWidth: 515, ml: '380px', mt: '-30px' }} size="small">
+        <FormControl sx={{ minWidth: 515, ml: '450px', mt: '-30px' }} size="small">
           <InputLabel id="demo-select-small">Tipo</InputLabel>
           <Select
             labelId="demo-select-small"
@@ -74,12 +74,13 @@ function Localizacao() {
           </Select>
         </FormControl>
 
-        <Box sx={{ width: '150px', height: '50px', mt: '-5.8rem', ml: '60rem', backgroundColor: '#DCDCDC', borderRadius: '25px' }}>
+        <Box sx={{ width: '140px', height: '50px', mt: '-5.8rem', ml: '65rem', backgroundColor: 'null', borderRadius: '25px' }}>
         <div>
-          <Button sx={{ width: '120px', height: '35px', mt: '0.5rem', ml: '1rem', backgroundColor: '#34C471', color: '#FFFFFF', borderRadius: '36px', display: 'inline' }}>Pesquisar</Button>
+          <Button sx={{ width: '150px', height: '40px', mt: '0.5rem', ml: '1rem', backgroundColor: '#34C471', color: '#FFFFFF', borderRadius: '36px', display: 'inline' }}>Pesquisar</Button>
         </div>
       </Box>
       </div>
+      <br />
       <br />
       <br />
       <div>
@@ -101,11 +102,9 @@ function Localizacao() {
           </>))}  */}
       </div>
 
-     
-
-      <Box sx={{display:'flex', justifyContent:'center',position:'absolute', top:'400px', left:'300px'}}>
+      {/* <Box sx={{display:'flex', justifyContent:'center',position:'absolute', top:'400px', left:'300px'}}>
         <img src={logo} alt="Logo" width="600" height="300" />
-      </Box>
+      </Box> */}
     </>
   );
 }
