@@ -14,27 +14,27 @@ import DataTable from '../components/Table_Home.js'
 
 function Localizacao() {
 
-async function getDevices() {
-    await axios.get('http://Testeapi-env.eba-x4bgfctn.us-east-1.elasticbeanstalk.com/product/all').then( async res => { 
+  async function getDevices() {
+    await axios.get('http://Testeapi-env.eba-x4bgfctn.us-east-1.elasticbeanstalk.com/product/all').then(async res => {
       setData(res.data.products);
       console.log(res.data.products);
-    } );
+    });
   }
-const filterId = (e) => {
+  const filterId = (e) => {
     let filteredId = data.filter((collaborator) => {
-        return collaborator.id
-            .toLowerCase()
-            .includes(e.target.value.toLowerCase());
+      return collaborator.id
+        .toLowerCase()
+        .includes(e.target.value.toLowerCase());
     });
 
     setFiltrado(filteredId);
     console.log(filteredId);
-};
-const [filtrado, setFiltrado] = useState([]);
+  };
+  const [filtrado, setFiltrado] = useState([]);
 
 
   const [data, setData] = useState([]);
-  
+
   useEffect(() => {
     getDevices();
   }, []);
@@ -47,21 +47,20 @@ const [filtrado, setFiltrado] = useState([]);
       <br></br>
 
       <div sx={{ display: 'inline' }}>
-        <Typography sx={{ ml: '15rem', fontSize: '24px', height: '10px', display: 'inline' }}>Pesquisa por ID</Typography>
+        <Typography sx={{ ml: '10rem', fontSize: '24px', height: '10px', display: 'inline' }}>Pesquisa por ID</Typography>
       </div>
 
       <div sx={{ display: 'flex', flexDirection: 'row', justifyContent: 'space-between' }}>
 
-        <div sx={{ display: 'inline', height: '2px'}}>
-          <Typography sx={{ ml: '15rem', mt:'2rem', fontSize: '24px', height: '10px', width: 'fit-content' }}>Pesquisa por tipo</Typography>
+        <div sx={{ display: 'inline', height: '2px' }}>
+          <Typography sx={{ ml: '10rem', mt: '2rem', fontSize: '24px', height: '10px', width: 'fit-content' }}>Pesquisa por tipo</Typography>
         </div>
 
-        <TextField size="small" label="ID" variant="outlined" sx={{ width:'514px', height:'55px', ml:'450px', mt: '-80px'}} onChange={(e) => filterId(e)} />
+        <TextField size="small" label="ID" variant="outlined" sx={{ width: '514px', height: '55px', ml: '380px', mt: '-80px' }} onChange={(e) => filterId(e)} />
 
-          <FormControl sx={{ minWidth: 515 , ml: '450px', mt: '-30px'}} size="small">
-            <InputLabel id="demo-select-small">Tipo</InputLabel>
-
-            <Select 
+        <FormControl sx={{ minWidth: 515, ml: '380px', mt: '-30px' }} size="small">
+          <InputLabel id="demo-select-small">Tipo</InputLabel>
+          <Select
             labelId="demo-select-small"
             id="demo-select-small"
             label="Categoria" >
@@ -72,14 +71,19 @@ const [filtrado, setFiltrado] = useState([]);
             <MenuItem value={20}>Tablet</MenuItem>
             <MenuItem value={30}>Cadeiras</MenuItem>
             <MenuItem value={40}>Mesas</MenuItem>
-            </Select>
+          </Select>
+        </FormControl>
 
-          </FormControl>
+        <Box sx={{ width: '150px', height: '50px', mt: '-5.8rem', ml: '60rem', backgroundColor: '#DCDCDC', borderRadius: '25px' }}>
+        <div>
+          <Button sx={{ width: '120px', height: '35px', mt: '0.5rem', ml: '1rem', backgroundColor: '#34C471', color: '#FFFFFF', borderRadius: '36px', display: 'inline' }}>Pesquisar</Button>
+        </div>
+      </Box>
       </div>
-        <br />
-        <br />
-      <div> 
-        <DataTable/>
+      <br />
+      <br />
+      <div>
+        <DataTable />
 
 
         {/* {filtrado && filtrado.length ? filtrado.map((device, index) => (
@@ -97,13 +101,11 @@ const [filtrado, setFiltrado] = useState([]);
           </>))}  */}
       </div>
 
-      <Box sx={{ width:'430px', height: '180px', mt:'3rem', ml:'25rem', backgroundColor: '#DCDCDC', borderRadius:'25px'}}>
-        <div>
-        <Button sx={{width:'188px', height:'56.93px', mt:'1rem', ml:'1rem', backgroundColor:'#34C471', color:'#FFFFFF', borderRadius:'36px', display:'inline'}}>Pesquisar</Button>
-        </div>
-      </Box>
+     
 
-      <img src={logo} alt="Logo" width="1200" height="700"/>
+      <Box sx={{display:'flex', justifyContent:'center',position:'absolute', top:'400px', left:'300px'}}>
+        <img src={logo} alt="Logo" width="600" height="300" />
+      </Box>
     </>
   );
 }
