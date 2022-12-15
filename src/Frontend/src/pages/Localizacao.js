@@ -92,7 +92,7 @@ function Localizacao() {
           </Select>
         </FormControl>  */}
 
-        <Box sx={{ width: '150px', height: '50px', mt: '-3.9rem', ml: '65rem', backgroundColor: '#DCDCDC', borderRadius: '25px' }}>
+        <Box sx={{ width: '150px', height: '50px', mt: '-3.9rem', ml: '65rem', backgroundColor: 'null', borderRadius: '25px' }}>
         <div>
           <Button sx={{ width: '120px', height: '35px', mt: '0.5rem', ml: '1rem', backgroundColor: '#34C471', color: '#FFFFFF', borderRadius: '36px', display: 'inline' }}>Pesquisar</Button>
         </div>

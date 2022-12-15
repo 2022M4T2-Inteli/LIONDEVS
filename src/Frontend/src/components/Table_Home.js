@@ -39,10 +39,10 @@ export default function DenseTable({ filtrado }) {
       <Table sx={{ minWidth: 650 }} size="small" aria-label="a dense table">
         <TableHead>
           <TableRow>
-            <TableCell align="right">Id</TableCell>
-            <TableCell align="right">Tipo</TableCell>
-            <TableCell align="right">Localização</TableCell>
-            <TableCell align="right">RFID</TableCell>
+            <TableCell sx={{fontWeight:'bold'}} align="center">Id</TableCell>
+            <TableCell sx={{fontWeight:'bold'}} align="center">Tipo</TableCell>
+            <TableCell sx={{fontWeight:'bold'}} align="center">Localização</TableCell>
+            <TableCell sx={{fontWeight:'bold'}} align="center">RFID</TableCell>
           </TableRow>
         </TableHead>
         <TableBody>
@@ -51,24 +51,24 @@ export default function DenseTable({ filtrado }) {
               key={row.id}
               sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
             >
-              <TableCell component="th" align='right' scope="row">
+              <TableCell component="th" align='center' scope="row">
                 {row.id}
               </TableCell>
-              <TableCell align="right">{row.Tipo}</TableCell>
-              <TableCell align="right">{row.localizacao || "Não fornecido"}</TableCell>
-              <TableCell align="right">{row.rfid}</TableCell>
+              <TableCell align="center">{row.Tipo}</TableCell>
+              <TableCell align="center">{row.localizacao || "Não fornecido"}</TableCell>
+              <TableCell align="center">{row.rfid}</TableCell>
             </TableRow>
           )) : data && data.length > 0 ? data.map((row) => (
             <TableRow
               key={row.id}
               sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
             >
-              <TableCell component="th" align='right' scope="row">
+              <TableCell component="th" align='center' scope="row">
                 {row.id}
               </TableCell>
-              <TableCell align="right">{row.Tipo}</TableCell>
-              <TableCell align="right">{row.localizacao || "Não fornecido"}</TableCell>
-              <TableCell align="right">{row.rfid}</TableCell>
+              <TableCell align="center">{row.Tipo}</TableCell>
+              <TableCell align="center">{row.localizacao || "Não fornecido"}</TableCell>
+              <TableCell align="center">{row.rfid}</TableCell>
             </TableRow>
           )) : <TableRow>
             <TableCell component="th" scope="row">
