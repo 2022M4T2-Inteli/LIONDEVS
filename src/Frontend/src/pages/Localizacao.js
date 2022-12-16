@@ -122,9 +122,9 @@ function Localizacao() {
 
      
 
-      <Box sx={{display:'flex', justifyContent:'center',position:'absolute', top:'400px', left:'300px'}}>
+      {/* <Box sx={{display:'flex', justifyContent:'center',position:'absolute', top:'400px', left:'300px'}}>
         <img src={logo} alt="Logo" width="1200" height="600" />
-      </Box>
+      </Box> */}
     </>
   );
 }
