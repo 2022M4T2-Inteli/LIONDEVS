@@ -28,7 +28,7 @@ A Beacon School, parceiro referente a este projeto, encontra dificuldades para g
   &emsp;| T2_G1_V5_IoT_Document.pdf<br>
   &emsp;| T2_G1_V5_IoT_Document.docx<br>
   &emsp;| T2_G1_V3_Instruction_Manual.pdf<br>
-  &emsp;| T1_G1_V3_Instruction_Manual.docx<br>
+  &emsp;| T2_G1_V3_Instruction_Manual.docx<br>
 |--> src<br>
   &emsp;|--> Backend<br>
   &emsp;|--> Circuito<br>
